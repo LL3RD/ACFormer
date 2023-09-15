@@ -20,7 +20,10 @@ git clone
 Install
 ```
 cd ACFormer
-make install
+cd thirdparty/mmdetection 
+python -m pip install -e .
+cd ../.. 
+python -m pip install -e .
 ```
 
 
