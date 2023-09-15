@@ -15,7 +15,7 @@ mim install mmcv-full==1.6.1
 ```
 Git clone acformer
 ```
-git clone 
+git clone https://github.com/LL3RD/ACFormer.git
 ```
 Install
 ```
