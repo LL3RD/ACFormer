@@ -11,7 +11,7 @@ Code for Affine-Consistent Transformer for Multi-Class Cell Nuclei Detection (IC
 Install mmcv using mim
 ```
 pip install -U openmim
-mim install mmcv==1.6.1
+mim install mmcv-full==1.6.1
 ```
 Git clone acformer
 ```
