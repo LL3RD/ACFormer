@@ -26,6 +26,10 @@ python -m pip install -e .
 cd ../.. 
 python -m pip install -e .
 ```
+## Dataset
+### Lizard Dataset
+Your can download [Original Lizard](https://warwick.ac.uk/fac/cross_fac/tia/data/lizard) from the official website or [Preprocessing Lizard] that is converted to hovernet consep format and split into patches.
+
 
 ## Main Result
 ### Lizard Dataset
