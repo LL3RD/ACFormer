@@ -2,3 +2,5 @@ torch
 torchvision
 prettytable
 scipy
+imgaug
+mmcls==0.23.2
