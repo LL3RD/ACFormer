@@ -3,6 +3,7 @@ Code for Affine-Consistent Transformer for Multi-Class Cell Nuclei Detection (IC
 
 ## Requisities
 -`python=3.8`
+
 -`pytorch=1.12.1+cu102`
 
 
