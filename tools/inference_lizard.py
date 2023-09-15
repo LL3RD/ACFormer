@@ -32,10 +32,10 @@ def parse_args():
                         default="/data2/huangjunjia/coco/Lizard/Lizard_COCO_6Classes/Lizard_Test/",
                         help='Image file')
     parser.add_argument('--config',
-                        default="/data2/huangjunjia/coco/Lizard/Checkpoints_6Classes/ACFormer/ACFormer.py",
+                        default="/data2/huangjunjia/coco/Lizard/Checkpoints_6Classes/ACFormer/ACFormer_Lizard.py",
                         help='Config file')
     parser.add_argument('--checkpoint',
-                        default="/data2/huangjunjia/coco/Lizard/Checkpoints_6Classes/ACFormer/best_F1d_iter_20800_BL_AAT_GL.pth",
+                        default="/data2/huangjunjia/coco/Lizard/Checkpoints_6Classes/ACFormer/ACFormer_Lizard_BL_AAT_GL.pth",
                         help='Checkpoint file')
     parser.add_argument('--gt-file',
                         default="/data2/huangjunjia/coco/Lizard/Lizard_Hovernet_6Classes/Test/Labels/",
