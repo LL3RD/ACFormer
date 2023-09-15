@@ -26,19 +26,19 @@ pred_idx_offset = 0
 def parse_args():
     parser = ArgumentParser()
     parser.add_argument('--img_file',
-                        default="/data2/huangjunjia/coco/Lizard/Lizard_Hovernet_6Classes/Test/Images/",
+                        default="./Your_Path/Lizard/Test/Images/",
                         help='Image file')
     parser.add_argument('--img_file_256',
-                        default="/data2/huangjunjia/coco/Lizard/Lizard_COCO_6Classes/Lizard_Test/",
+                        default="./Your_Path/Lizard/Patches/Lizard_Test/",
                         help='Image file')
     parser.add_argument('--config',
-                        default="/data2/huangjunjia/coco/Lizard/Checkpoints_6Classes/ACFormer/ACFormer_Lizard.py",
+                        default="./Your_Path/Lizard/ACFormer/ACFormer_Lizard.py",
                         help='Config file')
     parser.add_argument('--checkpoint',
-                        default="/data2/huangjunjia/coco/Lizard/Checkpoints_6Classes/ACFormer/ACFormer_Lizard_BL_AAT_GL.pth",
+                        default="./Your_Path/Lizard/ACFormer/ACFormer_Lizard_BL_AAT_GL.pth",
                         help='Checkpoint file')
     parser.add_argument('--gt-file',
-                        default="/data2/huangjunjia/coco/Lizard/Lizard_Hovernet_6Classes/Test/Labels/",
+                        default="./Your_Path/Lizard/Test/Labels/",
                         help='Path to output file')
     parser.add_argument(
         '--device', default='cuda:7', help='Device used for inference')
