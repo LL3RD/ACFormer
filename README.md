@@ -32,6 +32,11 @@ python -m pip install -e .
 | ---- | -----| ----- |----|----|
 | ACFormer | 0.782 | 0.557 | [Checkpoint](https://drive.google.com/file/d/12FyfAQf5VU2poXvqE_FmrB2HL6VDCldj/view?usp=drive_link)|[Config](https://drive.google.com/file/d/14scJog5GjZc-n-Uwn4sIAJcaO2tokxA-/view?usp=drive_link)|
 
+## Evaluation
+Modify your dataset path and checkpoint path in tools/inference_Lizard.py and run
+```
+python tools/inference_Lizard.py
+```
 
 ## Acknowledgement
 - ACFormer is built based on [SoftTeacher](https://github.com/microsoft/SoftTeacher) and [MMDetection](https://github.com/open-mmlab/mmdetection).
