@@ -106,12 +106,6 @@ def det(args, pred_centroid, pred_inst_type, img_name, img_idx):
     unpaired_true_all.append(unpaired_true)
     unpaired_pred_all.append(unpaired_pred)
 
-    # Save Predict Result
-    pred_mat = {}
-    pred_mat["inst_centroids"] = pred_centroid
-    pred_mat["inst_type"] = pred_inst_type
-    sio.savemat(os.path.join("/data2/huangjunjia/coco/Visual/QuantitiveC/Lizard/ACFormer_BL_AAT/", img_name + ".mat"),
-                pred_mat)
 
 
 def main(args):
@@ -168,38 +162,6 @@ def main(args):
             if idx == len(img_list) - 1:
                 det(args, pred_centroid, pred_inst_type, img_name_oral_last, img_idx)
 
-            # Save Predict Result
-            # pred_mat = {}
-            # pred_mat["inst_centroids"] = pred_centroid
-            # pred_mat["inst_type"] = pred_inst_type
-            # sio.savemat(os.path.join("/data2/huangjunjia/coco/Visual/QuantitiveC/CoNSeP/Ours/", img_name[:-4]+".mat"), pred_mat)
-
-            # Save Visual Result
-            # pred_save_path = os.path.join(args.config.rsplit("/", 1)[0], "Pred_Image")
-            # gt_save_path = os.path.join(args.config.rsplit("/", 1)[0], "GT_Image")
-            # os.makedirs(gt_save_path, exist_ok=True)
-            # os.makedirs(pred_save_path, exist_ok=True)
-            #
-            # img = mmcv.imread(os.path.join("/data2/huangjunjia/coco/CoNSeP_1000x1000/CoNSeP_Test", img_name))
-            # plt.imshow(img)
-            # for cls in range(1, num_classes + 1):
-            #     plt.scatter(true_centroid[:, 0][np.where(true_inst_type == cls)],
-            #                 true_centroid[:, 1][np.where(true_inst_type == cls)], s=1,
-            #                 color=(int(1 == cls), int(2 == cls), int(3 == cls)))
-            # plt.axis("off")
-            # plt.savefig(os.path.join(gt_save_path, img_name), dpi=400, bbox_inches='tight')
-            # # plt.show()
-            # plt.clf()
-            #
-            # plt.imshow(img)
-            # for cls in range(1, num_classes + 1):
-            #     plt.scatter(pred_centroid[:, 0][np.where(pred_inst_type == cls)],
-            #                 pred_centroid[:, 1][np.where(pred_inst_type == cls)], s=1,
-            #                 color=(int(1 == cls), int(2 == cls), int(3 == cls)))
-            # plt.axis("off")
-            # plt.savefig(os.path.join(pred_save_path, img_name), dpi=400, bbox_inches='tight')
-            # # plt.show()
-            # plt.clf()
 
         paired_all = np.concatenate(paired_all, axis=0)
         unpaired_true_all = np.concatenate(unpaired_true_all, axis=0)
