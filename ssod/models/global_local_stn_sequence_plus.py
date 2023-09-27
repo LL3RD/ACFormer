@@ -91,7 +91,6 @@ class GlobalLocal_STN_Sequence_PLUS(MultiSteamDetector):
         theta = torch.clamp(theta, min=torch.tensor([[0.2, -1, -0.5], [-1, 0.2, -0.5]]).to(theta.device),
                             max=torch.tensor([[2, 1, 0.5], [1, 2, 0.5]]).to(theta.device))
 
-        import pdb; pdb.set_trace()
         #
         # RandCrop
         # theta = torch.tensor([[[0.6, 0, float(torch.randint(low=-5, high=6, size=(1,))[0] / 10.)],
@@ -151,35 +150,6 @@ class GlobalLocal_STN_Sequence_PLUS(MultiSteamDetector):
                 else:
                     gt_labels.append(data_groups["gt_labels"][i][valid_inds])
 
-
-
-        import numpy as np
-        import matplotlib.pyplot as plt
-
-        def denorm(img):
-            std = [58.395, 57.12, 57.375]
-            mean = [123.675, 116.28, 103.53]
-            denorm_img = img * std + mean
-            denorm_img[np.where(denorm_img == mean)] = 0
-            return denorm_img
-
-        RGB = denorm(affine_results[1][0].detach().permute(1, 2, 0).cpu().numpy()) / 255.
-        w = RGB.shape[0]
-        h = RGB.shape[1]
-        dpi = 400
-        fig = plt.figure(figsize=(w / dpi, h / dpi), dpi=dpi)
-        axes = fig.add_axes([0, 0, 1, 1])
-        axes.set_axis_off()
-        axes.imshow(RGB)
-        # for i in range(3):
-        #     axes.scatter(gt_points[1][torch.where(gt_labels[1] == i)][:, 0].cpu(),
-        #                  gt_points[1][torch.where(gt_labels[1] == i)][:, 1].cpu(),
-        #                  s=4, color="none", linewidths=1, marker="o",
-        #                  edgecolors=(int(i == 0), int(i == 1), int(i == 2)))
-        plt.savefig("/data2/huangjunjia/coco/DEBUG/local_img1.png", bbox_inches='tight', pad_inches=0)
-        plt.show()
-
-        import pdb; pdb.set_trace()
 
         affine_results = torch.vstack(affine_results)
         data_groups["trans_img"] = affine_results
