@@ -51,5 +51,9 @@ Modify your dataset path and checkpoint path in tools/inference_lizard.py and ru
 python tools/inference_lizard.py
 ```
 
+```
+python tools/inference_consep.py
+```
+
 ## Acknowledgement
 - ACFormer is built based on [SoftTeacher](https://github.com/microsoft/SoftTeacher) and [MMDetection](https://github.com/open-mmlab/mmdetection).
