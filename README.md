@@ -33,6 +33,8 @@ python -m pip install -e .
 ### Lizard Dataset
 Your can download [Original Lizard](https://warwick.ac.uk/fac/cross_fac/tia/data/lizard) from the official website or [Preprocessed Lizard](https://drive.google.com/file/d/1Rsr0rlKOHi7mqKBrmV3yOvXcF6g6BCY1/view?usp=sharing) that is converted to hovernet consep format and split into patches.
 
+### CoNSeP Dataset
+Your can download [20x CoNSeP Dataset](https://drive.google.com/file/d/1uziLSN-59zV_Hxa226IlggMUwVQZP5bI/view?usp=sharing) from here.
 
 ## Main Result
 ### Lizard Dataset
