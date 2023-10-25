@@ -36,6 +36,10 @@ Your can download [Original Lizard](https://warwick.ac.uk/fac/cross_fac/tia/data
 ### CoNSeP Dataset
 Your can download [20x CoNSeP Dataset](https://drive.google.com/file/d/1uziLSN-59zV_Hxa226IlggMUwVQZP5bI/view?usp=sharing) from here.
 
+### BRCA Dataset
+Your can download [BRCA Dataset](https://github.com/TopoXLab/Dataset-BRCA-M2C) from the official website or [Preprocessed BRCA](https://drive.google.com/file/d/1HvIzsOs5FP9OdlJKAnU_PM6tX4B2Q1rk/view?usp=sharing).
+
+
 ## Main Result
 ### Lizard Dataset
 | Method | F1d | F1c | Model Weights |Config Files|
@@ -47,8 +51,15 @@ Your can download [20x CoNSeP Dataset](https://drive.google.com/file/d/1uziLSN-5
 | ---- | -----| ----- |----------------|----|
 | ACFormer | 0.739 | 0.613 | [Checkpoint](https://drive.google.com/file/d/1HHaVTvqVjh80mlQsBCdTEgqhRiCSHEIj/view?usp=sharing) |[Config](https://drive.google.com/file/d/1KyVHbeiSE4GOSFOE08d-XdeAB3-sftRr/view?usp=sharing)|
 
+### BRCA Dataset
+| Method | F1d | F1c | Model Weights  |Config Files|
+| ---- | -----| ----- |----------------|----|
+| ACFormer | 0.796 | 0.485| [Checkpoint](https://drive.google.com/file/d/1W_Xkn14-wG6IPUeZ50O4zXsa-z-N9UH8/view?usp=sharing) |[Config](https://drive.google.com/file/d/1jyL5jOhVCfEXabnF4ornbRrRrzPS7LB1/view?usp=sharing)|
+
+
+
 ## Evaluation
-Modify your dataset path and checkpoint path in tools/inference_lizard.py and run
+Download the preprocessed dataset and Modify your dataset path and checkpoint path in tools/inference_lizard.py and run
 ```
 python tools/inference_lizard.py
 ```
@@ -57,5 +68,8 @@ python tools/inference_lizard.py
 python tools/inference_consep.py
 ```
 
+```
+python tools/inference_brca.py
+```
 ## Acknowledgement
 - ACFormer is built based on [SoftTeacher](https://github.com/microsoft/SoftTeacher) and [MMDetection](https://github.com/open-mmlab/mmdetection).
