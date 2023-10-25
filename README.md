@@ -57,6 +57,13 @@ Your can download [BRCA Dataset](https://github.com/TopoXLab/Dataset-BRCA-M2C) f
 | ACFormer | 0.796 | 0.485| [Checkpoint](https://drive.google.com/file/d/1W_Xkn14-wG6IPUeZ50O4zXsa-z-N9UH8/view?usp=sharing) |[Config](https://drive.google.com/file/d/1jyL5jOhVCfEXabnF4ornbRrRrzPS7LB1/view?usp=sharing)|
 
 
+## Train
+Change the dataset path in config/ACFormer_CoNSeP.py and Run
+```
+CUDA_VISIBLE_DEVICES=0 bash tools/dist_train.sh configs/ACFormer_CoNSeP.py 1 --work-dir=Path to save
+```
+
+
 
 ## Evaluation
 Download the preprocessed dataset and Modify your dataset path and checkpoint path in tools/inference_lizard.py and run

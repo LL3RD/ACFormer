@@ -77,7 +77,6 @@ class GlobalLocal_STN_Sequence(MultiSteamDetector):
             self.absolute_pos_embed, size=out_size, mode="bicubic"
         )
         x = x + absolute_pos_embed.flatten(2).transpose(1, 2)
-        import pdb; pdb.set_trace()
         x = torch.cat((self.affine_token.expand(x.shape[0], -1, -1), x), dim=1)
 
         x = self.drop_after_pos(x)
@@ -400,97 +399,3 @@ class GlobalLocal_STN_Sequence(MultiSteamDetector):
             unexpected_keys,
             error_msgs,
         )
-
-
-"""
-import matplotlib.pyplot as plt
-plt.imshow(local_data['img'][0].cpu().permute((1,2,0))/255.)
-plt.scatter(pseudo_points[-1][0][:,0].cpu().detach().numpy(), pseudo_points[-1][0][:,1].cpu().detach().numpy(), s=1, color=(1,0,0))
-plt.show()
-
-local_pred = local_outs[0][-1][0]
-local_pred = local_pred[local_pred[:,2]>0.5]
-
-local_gt = local_data["gt_points"][0]
-plt.imshow(local_data['img'][0].cpu().permute((1,2,0))/255.)
-plt.scatter(local_gt[:,0].cpu().detach().numpy(), local_gt[:,1].cpu().detach().numpy(), s=1, color=(1,0,0))
-plt.show()
-
-
-plt.imshow(global_data['img'][0].cpu().permute((1,2,0))/255.)
-plt.scatter(global_info["det_points"][-1][0][:,0].cpu().detach().numpy(), global_info["det_points"][-1][0][:,1].cpu().detach().numpy(), s=1, color=(1,0,0))
-plt.show()
-
-
-global_feat = self.globals.extract_feat(data_groups["global"]["img"])
-global_outs = self.globals.bbox_head.forward(local_feat, data_groups["global"]["img_metas"])
-global_pred = global_outs[0][-1][0]
-global_pred = global_pred[global_pred[:,2]>0.5]
-
-plt.imshow(data_groups["global"]['img'][0].cpu().permute((1,2,0))/255.)
-plt.scatter(global_pred[:,0].cpu().detach().numpy(), global_pred[:,1].cpu().detach().numpy(), s=1, color=(1,0,0))
-plt.show()
-
-proposal_list, proposal_label_list = self.locals.bbox_head.simple_all_test_bboxes(
-             local_feat, data_groups["local"]["img_metas"], rescale=False
-         )
-sum(proposal_list[0][0][:,2] > 0.5)
-"""
-
-"""
-import matplotlib.pyplot as plt
-import numpy as np
-plt.imshow(local_data["trans_img"][0].cpu().detach().permute(1,2,0))
-lay=2
-bat=0
-for l in range(3):
-    plt.scatter(pseudo_points[lay][bat].cpu().detach()[:,0][np.where(pseudo_labels[lay][bat].cpu().numpy()==l)], 
-                pseudo_points[lay][bat].cpu().detach()[:,1][np.where(pseudo_labels[lay][bat].cpu().numpy()==l)],
-                s=5, color=(int(0==l),int(1==l),int(2==l)))
-plt.show()
-
-RGB = denorm(data_groups["img"][0].detach().permute(1, 2, 0).cpu().numpy())/255.
-w=RGB.shape[0]
-h=RGB.shape[1]
-dpi=400
-fig=plt.figure(figsize=(w/dpi,h/dpi),dpi=dpi)
-axes=fig.add_axes([0,0,1,1])
-axes.set_axis_off()
-axes.imshow(RGB)
-for i in range(3):
-    axes.scatter(data_groups['gt_points'][0][torch.where(data_groups['gt_labels'][0]==i)][:,0].cpu(),
-                 data_groups['gt_points'][0][torch.where(data_groups['gt_labels'][0]==i)][:,1].cpu(),
-                 s=4,color="none",linewidths=0.5, marker="o", edgecolors=(int(i==0),int(i==1),int(i==2)))
-plt.savefig("/data2/huangjunjia/coco/Visual/global_img_gt.png", bbox_inches='tight')
-plt.show()
-
-
-
-import numpy as np
-import matplotlib.pyplot as plt
-
-
-def denorm(img):
-    std = [58.395, 57.12, 57.375]
-    mean = [123.675, 116.28, 103.53]
-    denorm_img = img * std + mean
-    denorm_img[np.where(denorm_img == mean)] = 0
-    return denorm_img
-
-
-RGB = denorm(affine_results[1][0].detach().permute(1, 2, 0).cpu().numpy()) / 255.
-w = RGB.shape[0]
-h = RGB.shape[1]
-dpi = 400
-fig = plt.figure(figsize=(w / dpi, h / dpi), dpi=dpi)
-axes = fig.add_axes([0, 0, 1, 1])
-axes.set_axis_off()
-axes.imshow(RGB)
-for i in range(3):
-    axes.scatter(gt_points[1][torch.where(gt_labels[1] == i)][:, 0].cpu(),
-                 gt_points[1][torch.where(gt_labels[1] == i)][:, 1].cpu(),
-                 s=4, color="none", linewidths=1, marker="o", edgecolors=(int(i == 0), int(i == 1), int(i == 2)))
-plt.savefig("/data2/huangjunjia/coco/Visual/local_img2_gt.png", bbox_inches='tight',pad_inches = 0)
-plt.show()
-
-"""

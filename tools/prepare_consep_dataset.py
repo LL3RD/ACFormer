@@ -262,7 +262,7 @@ def valid():
 
 
 if __name__ == '__main__':
-    mode = ['Trdy', 'train']
+    mode = ['Train', 'train']
 
     coco_save_img_path = "/data2/huangjunjia/coco/COCO_CoNSeP_256/CoNSeP_{}/".format(mode[0])
     coco_save_gt_path = "/data2/huangjunjia/coco/COCO_CoNSeP_256/{}/gt_mat/".format(mode[1])
