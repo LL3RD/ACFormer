@@ -160,7 +160,7 @@ test_pipeline = [
 ]
 
 dataset_type = 'CellDetDataset_CoNSeP_SAHI'
-Path_to_CoNSeP_40x = "/data2/huangjunjia/coco/CoNSeP/HoverNet_CoNSeP_1000x1000"
+Path_to_CoNSeP_40x = "Path to CoNSeP_40x"
 data_root = Path_to_CoNSeP_40x+"/SAHI/"
 test_root = Path_to_CoNSeP_40x+"/Test/"
 data = dict(
