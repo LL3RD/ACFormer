@@ -58,9 +58,28 @@ Your can download [BRCA Dataset](https://github.com/TopoXLab/Dataset-BRCA-M2C) f
 
 
 ## Train
-Change the dataset path in config/ACFormer_CoNSeP.py and Run
+### For 20x CoNSeP Dataset
+First Download the preprocess dataset and change the dataset path in config/ACFormer_CoNSeP.py and Run
 ```
 CUDA_VISIBLE_DEVICES=0 bash tools/dist_train.sh configs/ACFormer_CoNSeP.py 1 --work-dir=Path to save
+```
+
+### For your own dataset (e.g. CoNSeP 40x for three classes)
+#### Prepare Dataset
+First Install the [sahi package](https://github.com/obss/sahi).
+```
+cd tools/sahi
+pip install -e .
+cd ..
+```
+Then Prepare the slicing dataset. (Modify the CoNSeP Path in prepare_consep_dataset_40x.py)
+```
+python prepare_consep_dataset_40x.py
+```
+
+Change the dataset path in config/ACFormer_CoNSeP_40x.py and Run
+```
+CUDA_VISIBLE_DEVICES=0 bash tools/dist_train.sh configs/ACFormer_CoNSeP_40x.py 1 --work-dir=Path to save
 ```
 
 

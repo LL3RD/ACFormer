@@ -1,2 +1,3 @@
 from .global_local_stn_sequence_plus import GlobalLocal_STN_Sequence_PLUS
 from .global_local_stn_sequence import GlobalLocal_STN_Sequence
+from .global_local import GlobalLocal
