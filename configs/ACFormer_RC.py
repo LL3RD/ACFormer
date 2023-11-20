@@ -219,3 +219,6 @@ optimizer = dict(
             # 'absolute_pos_embed': dict(lr_mult=0.0),
             # 'affine_token': dict(lr_mult=0.0),
         }))
+
+
+runner = dict(type='IterBasedRunner', max_iters=80000)
