@@ -183,8 +183,6 @@ custom_hooks = [
     # dict(type='GlobalWeight', max_value=2)
 ]
 evaluation = dict(type="SubModulesDistEvalHook", interval=800)
-# load_from = "/mntnfs/med_data2/huangjunjia/mmdet/consep/goballocal_STNSequence_TrainFromScratch_V2/iter_32000.pth"
-# load_from = "/mntnfs/med_data2/huangjunjia/mmdet/consep/goballocal_STNSequence_TrainFromScratch_Global/iter_16000.pth"
 # find_unused_parameters = True
 
 optimizer = dict(
