@@ -82,7 +82,7 @@ Change the dataset path in config/ACFormer_CoNSeP_40x.py and Run
 CUDA_VISIBLE_DEVICES=0 bash tools/dist_train.sh configs/ACFormer_CoNSeP_40x.py 1 --work-dir=Path to save
 ```
 
-Notably, the training of ACFormer is not particularly stable. When faced with small data, the AAT AAT is not easy to converge quickly.
+Notably, the training of ACFormer is not particularly stable. When faced with small data, the AAT is not easy to converge quickly.
 
 
 
