@@ -201,13 +201,11 @@ class CellDetDataset_CoNSeP_Best(CustomDataset):
             img_info = self.coco.load_imgs(img_id)
             img_name = img_info[0]['filename']
 
-            col_offset = int(img_info[0]["height"] / 2)
-            raw_offset = int(img_info[0]["width"] / 2)
+            col_offset = int(img_info[0]["height"])
+            raw_offset = int(img_info[0]["width"])
 
             if idx % 4 == 0:
-                # img_path = os.path.join("/mntnfs/med_data2/huangjunjia/dataset/CoNSeP/test/gt_mat/",
-                #                         img_name[:-7] + ".mat")
-                img_path = os.path.join("/data2/huangjunjia/coco/CoNSeP_1000x1000/test/gt_mat",
+                img_path = os.path.join(self.data_root + "/gt_mat",
                                         img_name[:-7] + ".mat")
                 true_info = sio.loadmat(img_path)
                 true_centroid = (true_info["inst_centroid"]).astype("float32")
