@@ -28,10 +28,10 @@ class GlobalLocal_STN_Sequence_PLUS(MultiSteamDetector):
             self.global_weight = self.train_cfg.global_weight
         # STN Sequence
         self.embed = stn_cfg['embed']
-        # self.affine_number = stn_cfg['affine_number']
-        # self.num_heads = stn_cfg['num_heads']
-        self.affine_number = 4
-        self.num_heads = 12
+        self.affine_number = stn_cfg['affine_number']
+        self.num_heads = stn_cfg['num_heads']
+        # self.affine_number = 4
+        # self.num_heads = 12
 
         self.patch_embed = PatchEmbed(in_channels=3, embed_dims=self.embed, stride=4, kernel_size=4,
                                       norm_cfg=dict(type='LN'))
