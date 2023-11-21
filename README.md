@@ -58,10 +58,10 @@ Your can download [BRCA Dataset](https://github.com/TopoXLab/Dataset-BRCA-M2C) f
 
 
 ## Train
-### For 20x CoNSeP Dataset
-First Download the preprocess dataset and change the dataset path in config/ACFormer_CoNSeP.py and Run
+### For Lizard Dataset
+First Download the preprocess dataset and change the dataset path in config/ACFormer_Lizard.py and Run
 ```
-CUDA_VISIBLE_DEVICES=0 bash tools/dist_train.sh configs/ACFormer_CoNSeP.py 1 --work-dir=Path to save
+CUDA_VISIBLE_DEVICES=0 bash tools/dist_train.sh configs/ACFormer_Lizard.py 1 --work-dir=Path to save
 ```
 
 ### For your own dataset (e.g. CoNSeP 40x for three classes)
