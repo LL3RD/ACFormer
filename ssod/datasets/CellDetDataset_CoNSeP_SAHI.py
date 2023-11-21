@@ -200,7 +200,7 @@ class CellDetDataset_CoNSeP_SAHI(CustomDataset):
             pred_inst_type = np.array([0])
 
         paired, unpaired_true, unpaired_pred = self.pair_coordinates(
-            true_centroid, pred_centroid, 6
+            true_centroid, pred_centroid, 12
         )
 
         self.true_idx_offset = (
@@ -253,7 +253,6 @@ class CellDetDataset_CoNSeP_SAHI(CustomDataset):
         pred_inst_type = []
         img_idx = 0
         img_name_last = None
-
 
         for idx, result in enumerate(results):
             img_id = self.img_ids[idx]
